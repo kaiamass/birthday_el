@@ -1,0 +1,288 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #101014;
+    --pink: #e8a8b8;
+    --light-pink: #f4c7d2;
+    --white: #fff8f5;
+    --gray: #c9bfc4;
+}
+
+/* =====================================
+   2. ОБЩИЙ ВИД СТРАНИЦЫ
+   ===================================== */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left, #39202d, transparent 40%),
+        radial-gradient(circle at bottom right, #292034, transparent 40%),
+        var(--background);
+
+    color: var(--white);
+    font-family: Georgia, serif;
+}
+
+/* =====================================
+   3. ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ
+   ===================================== */
+
+.page {
+    display: none;
+
+    min-height: 100vh;
+    padding: 60px 20px 80px;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.page.active {
+    display: flex;
+    animation: fadeIn 0.8s ease;
+}
+
+/* =====================================
+   4. АНИМАЦИЯ ПОЯВЛЕНИЯ
+   ===================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================
+   5. КОНТЕНТ И ЗАГОЛОВКИ
+   ===================================== */
+
+.content {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+}
+
+.small-title {
+    color: var(--pink);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+h1 {
+    font-size: clamp(38px, 7vw, 75px);
+    font-weight: normal;
+    line-height: 1.1;
+    margin: 25px 0;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 21px;
+    font-weight: normal;
+}
+
+p {
+    color: var(--gray);
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+/* =====================================
+   6. КНОПКИ
+   ===================================== */
+
+.next-btn {
+    margin-top: 25px;
+    padding: 17px 32px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: var(--pink);
+    color: #25151b;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    background: var(--light-pink);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px #e8a8b844;
+}
+
+/* =====================================
+   7. ФОТОГРАФИИ ЭЛЬМИРА
+   ===================================== */
+
+.photo-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 35px 0;
+}
+
+.photo-placeholder {
+    width: 280px;
+    height: 350px;
+
+    overflow: hidden;
+    border-radius: 20px;
+
+    border: 1px solid #ffffff30;
+    background: #29232a;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =====================================
+   8. СОВМЕСТНЫЕ ФОТО
+   ===================================== */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin: 35px 0;
+}
+
+.memory-card {
+    padding: 15px;
+    border-radius: 20px;
+    background: #ffffff0c;
+    border: 1px solid #ffffff20;
+    text-align: left;
+}
+
+.memory-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.memory-card h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.memory-card p {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+/* =====================================
+   9. ПИСЬМО
+   ===================================== */
+
+.letter {
+    max-width: 750px;
+    margin: 35px auto;
+    padding: 30px;
+
+    text-align: left;
+
+    background: #ffffff0c;
+    border: 1px solid #ffffff25;
+    border-radius: 20px;
+}
+
+.letter p {
+    color: var(--white);
+    font-size: 18px;
+}
+
+/* =====================================
+   10. СЕКРЕТНАЯ СТРАНИЦА
+   ===================================== */
+
+.secret-box {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 35px;
+
+    background: #e8a8b810;
+    border: 1px dashed var(--pink);
+    border-radius:
+
+
+20px;
+}
+
+/* =====================================
+   11. ФИНАЛ
+   ===================================== */
+
+.final-love {
+    color: var(--pink);
+    margin-top: 40px;
+}
+
+/* =====================================
+   12. НОМЕР СТРАНИЦЫ
+   ===================================== */
+
+.page-count {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+
+    color: #ffffff70;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+/* =====================================
+   13. АДАПТАЦИЯ ПОД ТЕЛЕФОН
+   ===================================== */
+
+max-width: 650px {
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-placeholder {
+        width: 100%;
+        max-width: 330px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    .memory-card img {
+        height: 250px;
+    }
+}
